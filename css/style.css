@@ -1,0 +1,363 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ecf0f1;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: white;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    text-align: center;
+    color: #1e3e7a;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.balance-info {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.balance-info > div {
+    text-align: center;
+    padding: 20px;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    flex: 1;
+    min-width: 150px;
+}
+
+.balance-total {
+    background: #1e3e7a !important;
+    border-color: #1e3e7a !important;
+    color: white !important;
+}
+
+.balance-total .balance-label {
+    color: white !important;
+}
+
+.balance-total .balance-value {
+    color: white !important;
+}
+
+.balance-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.balance-value {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1e3e7a;
+}
+
+/* Formulario */
+.form-section {
+    background: white;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-section h2 {
+    color: #1e3e7a;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #1e3e7a;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+    transition: border 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #1e3e7a;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background: #1e3e7a;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background: #1e3e7a;
+}
+
+/* Filtros */
+.filters-seccion {
+    background: white;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filters-seccion h3 {
+    color: #1e3e7a;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filters select {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+    min-width: 200px;
+}
+
+.filters select:focus {
+    outline: none;
+    border-color: #1e3e7a;
+}
+
+/* Gráficos */
+.graficos-section {
+    background: white;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.graficos-section h2 {
+    color: #16a085;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.graficos-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.grafico-box {
+    text-align: center;
+}
+
+.grafico-box h3 {
+    color: #16a085;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Transacciones */
+.transacciones-section {
+    background: white;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.transacciones-section h2 {
+    color: #1e3e7a;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+#listaTransacciones {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mensaje-vacio {
+    text-align: center;
+    color: #999;
+    padding: 40px;
+    font-size: 0.95rem;
+}
+
+.transaccion-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-left: 3px solid;
+    background: #fafafa;
+    transition: background 0.2s;
+}
+
+.transaccion-item:hover {
+    background: #f0f0f0;
+}
+
+.transaccion-item.ingreso {
+    border-color: #27ae60;
+}
+
+.transaccion-item.gasto {
+    border-color: #e74c3c;
+}
+
+.transaccion-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.transaccion-tipo {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    display: inline-block;
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ingreso .transaccion-tipo {
+    background: #27ae60;
+    color: white;
+}
+
+.gasto .transaccion-tipo {
+    background: #e74c3c;
+    color: white;
+}
+
+.transaccion-descripcion {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e3e7a;
+}
+
+.transaccion-categoria,
+.transaccion-fecha {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+
+.transaccion-acciones {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.transaccion-monto {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e3e7a;
+}
+
+.btn-eliminar {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+}
+
+.btn-eliminar:hover {
+    background: #c0392b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    .balance-info {
+        flex-direction: column;
+    }
+
+    .transaccion-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .transaccion-acciones {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .filters select {
+        width: 100%;
+    }
+
+    .graficos-container {
+        grid-template-columns: 1fr;
+    }
+}

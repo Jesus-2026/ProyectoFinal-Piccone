@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Finanzas Personales</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <h1>Control de Finanzas Personales</h1>
+
+        <div class="balance-info">
+
+            <div class="balance-item balance-total">
+                <span class="balance-label">Balance Total</span>
+                <span class="balance-value" id="balanceTotal">$0</span>
+
+            </div>
+            <div>
+                <span class="balance-label">Total Ingresos</span>
+                <span class="balance-value" id="totalIngresos">$0</span>
+            </div>
+            <div>
+                <span class="balance-label">Total Gastos</span>
+                <span class="balance-value" id="totalGastos">$0</span>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="form-section">
+        <h2>Nueva Transacción</h2>
+
+          <!-- Campo 1: Tipo (Ingreso o Gasto) -->
+
+        <form id="transaccionForm"> 
+            <div class="form-group">
+                <label for="tipo">Tipo</label>
+                <select name="tipo" id="tipo">
+                    <option value="--Seleccionar--"></option>
+                    <option value="ingreso">Ingreso</option>
+                    <option value="gasto">Gasto</option>
+                </select>
+                            <!-- Campo 3: Monto -->
+
+                <div class="form-group">
+                    <label for="monto">Monto ($):</label>
+                    <input 
+                        type="number" name="monto" id="monto" placeholder="0.00"
+                        min="0" step="0.01"
+                        required>
+                </div>
+                            <!-- Campo 4: Categoría -->
+                <div class="form-group">
+                    <label for="categoria">Categoria</label>
+                    <select name="categoria" id="categoria" required>
+                        <!-- se carga desde el json -->
+                    </select>
+                </div>
+                            <!-- Campo 2: Descripción -->
+                <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <input type="text"
+                            id="descripcion"
+                            name="descripcion"
+                            placeholder="Ej: Sueldo, Supermercado, Transporte..." required>
+                            
+                </div>  
+                
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" name="fecha" required> 
+                
+                </div>
+                <button type="submit" class="btn-primary">Agregar Transacción</button>
+
+
+            </div>
+
+        </form>
+
+    </section>
+
+    <!--filtros-->
+
+    <section class="filters-seccion">
+        <h3>Filtrar por:</h3>
+        <div class="filters">
+            <select id="filtroTipo">
+                <option value="todos">Todos</option>
+                <option value="ingreso">Ingresos</option>
+                <option value="gasto">Gastos</option>
+            </select>
+
+             <select id="filtroCategoria">
+                    <option value="todas">Todas las categorías</option>
+                    <!-- Se carga dinámicamente -->
+            </select>
+        </div>
+    </section>
+
+    <!-- Gráficos -->
+    <section class="graficos-section">
+        <h2>Análisis de Gastos</h2>
+        <div class="graficos-container">
+            <div class="grafico-box">
+                <h3>Balance General</h3>
+                <canvas id="graficoBalance"></canvas>
+            </div>
+            <div class="grafico-box">
+                <h3>Gastos por Categoría</h3>
+                <canvas id="graficoCategoria"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de transacciones -->
+    <section class="transacciones-section">
+        <h2>Historial de Transacciones</h2>
+        <div id="listaTransacciones">
+            <!-- Las transacciones se cargan aquí desde JavaScript -->
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/transacciones.js"></script>
+    <script src="js/interfas.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+
+</html>
